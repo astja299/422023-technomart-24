@@ -6,7 +6,7 @@
 </head>
 <body>
 <header class="main-header">
-    <section class="main-header-top">
+    <div class="main-header-top">
         <a class="main-header-logo">
             <img src="img/index-logo.svg" width="230" height="50" alt="Логотип компании «Техномарт»">
         </a>
@@ -14,27 +14,26 @@
         <a class="main-header-bookmarks" href="#">Закладки: 0</a>
         <a class="main-header-cart" href="#">Корзина: 0</a>
         <a class="main-header-order" href="#">Оформить заказ</a>
-    </section>
+    </div>
 
-    <section class="main-header-info">
+    <div class="main-header-info">
         <p class="main-header-title">Интернет-магазин строительных материалов и инструментов для ремонта</p>
-        <div class="main-header-contacts">
-            <p class="main-header-number">
-                <a href="+78125550555">+7 (812) 555-05-55</a>
-            </p>
-            <address class="main-header-location">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
-        </div>
+      <div class="main-header-contacts">
+        <address class="main-header-location">
+          <p>+7 (812) 555-05-55</p>
+          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
+      </div>
         <ul class="main-header-user-anonymous">
             <li class="login">Войти</li>
             <li class="registration">Регистрация</li>
         </ul>
-    </section>
+    </div>
 
     <nav class="main-menu">
         <ul class="main-menu-links">
-            <li><a href="#">Главная</a></li>
+          <li><a>Главная</a>a></li>
             <li><a href="#">Компания</a></li>
-            <li><a href="#">Каталог</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
             <li><a href="#">Новости</a></li>
             <li><a href="#">Спецпредложения</a></li>
             <li><a href="#">Доставка</a></li>
@@ -46,7 +45,7 @@
 <main class="container">
     <h1 class="visually-hidden">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
     <section class="about-us">
-        <h2>КОМПАНИЯ «Техномарт»</h2>
+        <h2>Компания «Техномарт»</h2>
         <p>
             Настоящий мужской шоппинг начинается здесь!
             Огромный выбор товаров для ремонта и строительства
@@ -61,11 +60,11 @@
             <li>Автотрейдинг</li>
             <li>ЖелДорЭкспедиция</li>
         </ul>
-        <a class="button" href="#">ПОДРОБНЕЕ О КОМПАНИИ</a>
+        <a class="button" href="#">Подробнее о компании</a>
     </section>
 
     <section class="contacts">
-        <h2>КОНТАКТЫ</h2>
+        <h2>Контакты</h2>
         <p>
             Вы можете забрать товар сами, заехав в наш офис:
         </p>
@@ -78,22 +77,20 @@
         <a class="main-footer-logo">
             <img src="img/index-logo.svg" width="230" height="70" alt="Логотип компании «Техномарт»">
         </a>
-        <div class="main-footer-contacts">
-            <address class="main-footer-location">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
-            <p class="main-footer-number">
-                <a href="+78125550555">+7 (812) 555-05-55</a>
-            </p>
-        </div>
+      <div class="main-footer-contacts">
+        <address class="main-footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
+          +7 (812) 555-05-55</address>
+      </div>
 
-        <div class="main-footer-company-info"></div>
+
         <ul class="main-menu-links">
             <li><a href="#">Компания</a></li>
             <li><a href="#">Новости</a></li>
-            <li><a href="#">Каталог</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
             <li><a href="#">Доставка</a></li>
             <li><a href="#">Контакты</a></li>
         </ul>
-        <div class="main-footer-company-product-categories"></div>
+
         <ul class="main-menu-links">
             <li><a href="#">Материалы</a></li>
             <li><a href="#">Техника</a></li>
@@ -116,13 +113,13 @@
             </ul>
         </div>
 
-        <p class="main-footer-bottom-contact-us">
-            Обратная связь: 
-			<span>mail@htmlacademy.ru </span>
-        </p>
-        <p class="main-footer-bottom-developer">
-            Разработано - <span>htmlacademy.ru </span>
-        </p>
+      <p class="main-footer-bottom-contact-us">
+        Обратная связь:
+        <a href="mail@htmlacademy.ru">mail@htmlacademy.ru </a>
+      </p>
+      <p class="main-footer-bottom-developer">
+        Разработано - <a href="htmlacademy.ru">htmlacademy.ru</a>
+      </p>
 
     </section>
 </footer>
