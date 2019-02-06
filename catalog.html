@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Техномарт</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
 </head>
 <body>
 <header class="main-header">
@@ -10,7 +14,11 @@
     <a class="main-header-logo" href="index.html">
       <img src="img/logo.png" width="110" height="18" alt="Логотип компании «Техномарт»">
     </a>
-    <!-- Здесь будет форма поиска -->
+    <form>
+      <p class="main-header-search">
+        <input type="search" name="q" placeholder="Поиск:">
+      </p>
+    </form>
     <a class="main-header-bookmarks" href="#">Закладки: 0</a>
     <a class="main-header-cart-active" href="#">Корзина: 10</a>
     <a class="main-header-order" href="#">Оформить заказ</a>
@@ -65,11 +73,30 @@
 
   <h1>Перфораторы</h1>
 
-  <section class="filters">
-    <h2 class="visually-hidden">Фильтр товаров</h2>
-    <!-- Здесь будет форма -->
+  <div class="sorting">
+    <h2>Сортировка:</h2>
+    <ul class="sort-optios">
+      <li class="sort-selected"><a href="#">По цене</a></li>
+      <li class=""><a href="#">По типу</a></li>
+      <li class=""><a href="#">По функционалу</a></li>
+    </ul>
+    <ul class="sort-icons">
+      <li class="selected"><a href="#"></a></li> <!--По возрастанию -->
+      <li class=""><a href="#"></a></li> <!-- По убыванию -->
+    </ul>
+  </div>
 
+  <section class="filters">
+    <h2>Фильтр:</h2>
     <form class="filter" method="get" action="https://echo.htmlacademy.ru">
+      <fieldset>
+        <legend>Цена:</legend>
+        <div class="filter-price">
+          <label for="price">Количество дней</label>
+          <input type="range" id="price" name="fiter-price" min="0" max="35000" value="30000" step="5000">
+        </div>
+        <span>0</span> - <span>30000</span>
+      </fieldset>
       <fieldset>
         <legend>Производители:</legend>
         <ul class="filters-brand">
@@ -83,11 +110,11 @@
           </li>
           <li class="filter-option">
             <input type="checkbox" name="makita" id="filter-makita" checked>
-            <label for="filter-makita">Makita</label>>
+            <label for="filter-makita">Makita</label>
           </li>
           <li class="filter-option">
             <input type="checkbox" name="dewalt" id="filter-dewalt">
-            <label for="filter-dewalt">Dewalt</label>>
+            <label for="filter-dewalt">Dewalt</label>
           </li>
           <li class="filter-option">
             <input type="checkbox" name="hitachi" id="filter-hitachi">
@@ -157,7 +184,7 @@
         <p class="tag">new</p>
         <p class="catalog-item-buttons">
           <a href="#" class="catalog-item-buttons-buy">КУПИТЬ</a>
-          <button class="catalog-item-buttons-bookmarks">В ЗАКЛАДКИ</button>
+          <button class="button catalog-item-buttons-bookmarks">В ЗАКЛАДКИ</button>
         </p>
         <p class="catalog-item-price-actual">
           <a class="button" href="#">12500 P.</a>
@@ -298,9 +325,9 @@
 
     <div class="main-footer-bottom-social">
       <ul class="social-links">
-        <li><a class="social-links-vkontakte" href="#" aria-label="Vkontakte"></a></li>
-        <li><a class="social-links-facebook" href="#" aria-label="Facebook"></a></li>
-        <li><a class="social-links-instagram" href="#" aria-label="Instagram"></a></li>
+        <li><a class="social-links-vkontakte" href="#" aria-label="Vkontakte">vk</a></li>
+        <li><a class="social-links-facebook" href="#" aria-label="Facebook">fb</a></li>
+        <li><a class="social-links-instagram" href="#" aria-label="Instagram">inst</a></li>
       </ul>
     </div>
 
@@ -320,7 +347,9 @@
 <section class="product-added-popup visually-hidden">
   <p>Товар добавлен в корзину!</p>
   <!-- Здесь будет иконка -->
-  <a class="open-card" href="#">Оформить заказ</a>
-  <a class="back-to-page" href="#">Продолжить покупки</a>
-  <button type="button" class="close-popup">Закрыть</button>
+<div class="popup-footer">
+  <a class="button open-card" href="#">Оформить заказ</a>
+  <a class="button back-to-page" href="#">Продолжить покупки</a>
+</div>
+  <button type="button" class="button close-popup">Закрыть</button>
 </section>
