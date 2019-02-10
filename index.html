@@ -9,57 +9,66 @@
 </head>
 <body>
 <header class="main-header">
-  <div class="main-header-top">
-    <div class="main-header-logo">
-      <img src="img/logo.png" width="110" height="18" alt="Логотип компании «Техномарт»">
+  <div class="main-top-wrapper">
+    <div class="container">
+      <div class="main-header-top">
+        <div class="main-header-logo">
+          <img src="img/logo.png" width="110" height="18" alt="Логотип компании «Техномарт»">
+        </div>
+        <form class="main-header-search-form">
+          <p class="main-header-search">
+            <input type="search" name="q" placeholder="Поиск:">
+          </p>
+        </form>
+        <div class="main-header-order-details">
+          <a class="main-header-bookmarks" href="#">Закладки: 0</a>
+          <a class="main-header-cart" href="#">Корзина: 0</a>
+          <a class="main-header-order" href="#">Оформить заказ</a>
+        </div>
+      </div>
     </div>
-    <form>
-      <p class="main-header-search">
-        <input type="search" name="q" placeholder="Поиск:">
-      </p>
-    </form>
-    <a class="main-header-bookmarks" href="#">Закладки: 0</a>
-    <a class="main-header-cart" href="#">Корзина: 0</a>
-    <a class="main-header-order" href="#">Оформить заказ</a>
   </div>
 
-  <div class="main-header-info">
-    <p class="main-header-title">Интернет-магазин строительных материалов и инструментов для ремонта</p>
-    <div class="main-header-contacts">
-      <address class="main-header-location">
-        <p>+7 (812) 555-05-55</p>
-        г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
+
+  <div class="container">
+    <div class="main-header-info">
+      <p class="main-header-title">Интернет-магазин строительных материалов и инструментов для ремонта</p>
+      <div class="main-header-contacts">
+        <address class="main-header-location">
+          <p>+7 (812) 555-05-55</p>
+          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
+      </div>
+      <ul class="main-header-user-anonymous">
+        <li>
+          <a class="login" href="login.html">
+            Войти
+          </a>
+        </li>
+        <li>
+          <a class="registration" href="#">
+            Регистрация
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="main-header-user-anonymous">
-      <li>
-        <a class="login" href="login.html">
-          Войти
-        </a>
-      </li>
-      <li>
-        <a class="registration" href="#">
-          Регистрация
-        </a>
-      </li>
-    </ul>
+
+    <nav class="main-menu">
+      <ul class="main-menu-links">
+        <li><a>Главная</a></li>
+        <li><a href="#">Компания</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="#">Новости</a></li>
+        <li><a href="#">Спецпредложения</a></li>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
   </div>
-  <nav class="main-menu">
-    <ul class="main-menu-links">
-      <li><a>Главная</a></li>
-      <li><a href="#">Компания</a></li>
-      <li><a href="catalog.html">Каталог</a></li>
-      <li><a href="#">Новости</a></li>
-      <li><a href="#">Спецпредложения</a></li>
-      <li><a href="#">Доставка</a></li>
-      <li><a href="#">Контакты</a></li>
-    </ul>
-  </nav>
-
-
 </header>
 
 <main class="container">
   <h1 class="visually-hidden">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
+
   <div class="index-columns">
     <section class="about-us">
       <h2>Компания «Техномарт»</h2>
@@ -97,56 +106,66 @@
 
 
 <footer class="main-footer">
+
   <section class="main-footer-top">
-    <div class="main-footer-logo-component">
-      <a class="main-footer-logo">
-        <img src="img/logo.png" width="138" height="23" alt="Логотип компании «Техномарт»">
-      </a>
-    </div>
-    <div class="main-footer-contacts">
-      <address class="main-footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
-        +7 (812) 555-05-55</address>
-    </div>
+    <div class="container">
+      <div class="main-footer-wrapper">
+        <div class="main-footer-logo-component">
+          <a class="main-footer-logo">
+            <img src="img/logo.png" width="138" height="23" alt="Логотип компании «Техномарт»">
+          </a>
+        </div>
+        <div class="main-footer-contacts">
+          <address class="main-footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
+            +7 (812) 555-05-55</address>
+        </div>
+      </div>
 
-    <ul class="main-footer-menu-links">
-      <li><a href="#">Компания</a></li>
-      <li><a href="#">Новости</a></li>
-      <li><a href="catalog.html">Каталог</a></li>
-      <li><a href="#">Доставка</a></li>
-      <li><a href="#">Контакты</a></li>
-    </ul>
+      <div class="main-footer-menu-wrapper">
+        <ul class="main-footer-menu-links">
+          <li><a href="#">Компания</a></li>
+          <li><a href="#">Новости</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
 
-    <ul class="main-footer-menu-links-color">
-      <li><a href="#">Материалы</a></li>
-      <li><a href="#">Техника</a></li>
-      <li><a href="#">Инструмент</a></li>
-      <li><a href="#">Спецпредложения</a></li>
-    </ul>
+        <ul class="main-footer-menu-links-color">
+          <li><a href="#">Материалы</a></li>
+          <li><a href="#">Техника</a></li>
+          <li><a href="#">Инструмент</a></li>
+          <li><a href="#">Спецпредложения</a></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="main-footer-bottom">
-    <p class="main-footer-bottom-copyright">
-      &copy; 2010-2017 Компания "Техномарт"
-      Все права защищены
-    </p>
+    <div class="container">
+      <p class="main-footer-bottom-copyright">
+        &copy; 2010-2017 Компания "Техномарт"
+        Все права защищены
+      </p>
 
-    <div class="main-footer-bottom-social">
-      <ul class="social-links">
-        <li><a class="social-links-vkontakte" href="#" aria-label="Vkontakte"></a></li>
-        <li><a class="social-links-facebook" href="#" aria-label="Facebook"></a></li>
-        <li><a class="social-links-instagram" href="#" aria-label="Instagram"></a></li>
-      </ul>
+      <div class="main-footer-bottom-social">
+        <ul class="social-links">
+          <li><a class="social-links-vkontakte" href="#" aria-label="Vkontakte"></a></li>
+          <li><a class="social-links-facebook" href="#" aria-label="Facebook"></a></li>
+          <li><a class="social-links-instagram" href="#" aria-label="Instagram"></a></li>
+        </ul>
+      </div>
+
+      <p class="main-footer-bottom-contact-us">
+        Обратная связь:
+        <a href="mail@htmlacademy.ru">mail@htmlacademy.ru </a>
+      </p>
+      <p class="main-footer-bottom-developer">
+        Разработано - <a href="htmlacademy.ru">htmlacademy.ru</a>
+      </p>
     </div>
-
-    <p class="main-footer-bottom-contact-us">
-      Обратная связь:
-      <a href="mail@htmlacademy.ru">mail@htmlacademy.ru </a>
-    </p>
-    <p class="main-footer-bottom-developer">
-      Разработано - <a href="htmlacademy.ru">htmlacademy.ru</a>
-    </p>
-
   </section>
+
+
 </footer>
 </body>
 </html>
