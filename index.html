@@ -26,9 +26,9 @@
           </p>
         </form>
 
-           <a class="main-header-bookmarks" href="#">Закладки: 0</a>
-          <a class="main-header-cart" href="#">Корзина: 0</a>
-          <a class="main-header-order" href="#">Оформить заказ</a>
+        <a class="main-header-bookmarks" href="#">Закладки: 0</a>
+        <a class="main-header-cart" href="#">Корзина: 0</a>
+        <a class="main-header-order" href="#">Оформить заказ</a>
 
       </div>
     </div>
@@ -41,7 +41,8 @@
         <br>и инструментов для ремонта</p>
 
       <address class="main-header-location">
-        <p class="phone-number">+7 (812) 555-05-55</p>
+        <p x-ms-format-detection="none" class="phone-number">+7 (812) 555-05-55</p>
+
         <p class="our-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </address>
 
@@ -131,15 +132,15 @@
       </li>
 
 
-        <li class="categories-option discounts">
-          <h3>Скидки 50%</h3>
-          <a class="" href="#" aria-label="">На 350 ТОВАРОВ</a>
-        </li>
+      <li class="categories-option discounts">
+        <h3>Скидки 50%</h3>
+        <a class="" href="#" aria-label="">На 350 ТОВАРОВ</a>
+      </li>
 
-        <li class="categories-option delivery">
-          <h3>Доставка</h3>
-          <a class="" href="#" aria-label="">бесплатно</a>
-        </li>
+      <li class="categories-option delivery">
+        <h3>Доставка</h3>
+        <a class="" href="#" aria-label="">бесплатно</a>
+      </li>
 
 
 
@@ -153,12 +154,12 @@
 
   <div class="popular-products container">
 
-      <h2>
-        Популярные товары:
-      </h2>
+    <h2>
+      Популярные товары:
+    </h2>
 
-      <a class="button" href="#">все популярные товары</a>
-    </div>
+    <a class="button" href="#">все популярные товары</a>
+  </div>
   <div class="container">
 
     <ul class="catalog-list">
@@ -227,51 +228,51 @@
 
   <div class="popular-brands container">
 
-      <h2>
-        Популярные ПРОИзводители:
-      </h2>
+    <h2>
+      Популярные ПРОИзводители:
+    </h2>
 
 
-      <a class="button" href="#">все производители</a>
-    </div>
+    <a class="button" href="#">все производители</a>
+  </div>
 
   <div class="container">
 
     <section class="product-brands-list">
 
-        <a href="#">
+      <a href="#">
         <img src="img/bosch.png"  alt="bosch">
-        </a>
+      </a>
 
-        <a href="#">
+      <a href="#">
         <img src="img/makita.png" alt="makita">
-        </a>
+      </a>
 
-        <a href="#">
+      <a href="#">
         <img src="img/de-walt.png" alt="de-walt">
-        </a>
+      </a>
 
-        <a href="#">
+      <a href="#">
         <img src="img/interskol.png" alt="interskol">
-        </a>
+      </a>
 
-        <a href="#">
+      <a href="#">
         <img src="img/hitachi.png"  alt="hitachi">
-        </a>
+      </a>
 
-        <a href="#">
+      <a href="#">
         <img src="img/lg.png" alt="lg">
-        </a>
+      </a>
 
-        <a href="#">
+      <a href="#">
         <img src="img/aeg.png" alt="aeg">
-        </a>
+      </a>
 
-         <a href="#">
+      <a href="#">
         <img src="img/metabo.png"  alt="metabo">
-        </a>
+      </a>
 
-     </section>
+    </section>
   </div>
 
 
@@ -416,8 +417,8 @@
             <img src="img/logo.svg" width="138" height="23" alt="Логотип компании «Техномарт»">
           </a>
         </div>
-          <address class="main-footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
-            +7 (812) 555-05-55</address>
+        <address  x-ms-format-detection="none" class="main-footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
+          +7 (812) 555-05-55</address>
 
       </div>
 
@@ -490,7 +491,8 @@
 
 <section class="modal modal-map">
   <h2 class="visually-hidden">Как до нас добраться</h2>
-  <p><img src="img/big-map.jpg" width="940" height="446" alt="Офис компании по адресу г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8"></p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533216!2d30.320858716006118!3d59.93871648187625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sil!4v1550886668163" width="940" height="446" frameborder="0" style="border:0" allowfullscreen>
+  </iframe>
   <button class="modal-close" type="button">Закрыть</button>
 </section>
 
@@ -521,8 +523,15 @@
   <button type="button" class="modal-close">Закрыть</button>
 </section>
 
-
-
+<section class="modal product-added-popup">
+  <p>Товар добавлен в корзину!</p>
+  <div class="popup-footer">
+    <a class="button open-card" href="#">Оформить заказ</a>
+    <a class="back-to-page button" href="#">Продолжить покупки</a>
+  </div>
+  <button type="button" class="modal-close">Закрыть</button>
+</section>
+<script src="js/script.js"></script>
 
 </body>
 </html>
