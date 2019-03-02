@@ -1,3 +1,16 @@
+/* Services slider */
+
+function showSlide(n){
+  var activeSlide = document.querySelector(".services-slider-active");
+  var targetSlide = document.querySelectorAll(".services-slider").item(n);
+
+  if(activeSlide && targetSlide){
+    activeSlide.classList.remove("services-slider-active");
+    targetSlide.classList.add("services-slider-active");
+  } else if (activeSlide && !targetSlide){
+    showSlide(n-1);
+  }
+}
 
 /* Write us checks */
 
@@ -11,7 +24,6 @@ var leadName = document.querySelector("#user-name");
 var email = document.querySelector("[name=email]");
 var text = document.querySelector("[name=text]");
 
-
 try {
   storageName = localStorage.getItem("leadName");
   storageEmail = localStorage.getItem("leadEmail");
@@ -19,7 +31,7 @@ try {
   isStorageSupport = false;
 }
 
-try {
+if (linkWriteUs && popupWriteUs){
   linkWriteUs.addEventListener("click", function (evt) {
     evt.preventDefault();
     popupWriteUs.classList.add("modal-active");
@@ -37,11 +49,9 @@ try {
       leadName.focus();
     }
   });
-} catch (err) {
-  console.log(err);
 }
 
-try {
+if (popupWriteUs){
   window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
       if (popupWriteUs.classList.contains("modal-active")) {
@@ -50,22 +60,18 @@ try {
       }
     }
   });
-}  catch (err) {
-  console.log(err);
 }
 
-try {
+if(closeWriteUs){
   closeWriteUs.addEventListener("click", function (evt) {
     evt.preventDefault();
     popupWriteUs.classList.remove("modal-active");
     popupWriteUs.classList.remove("modal-error");
   });
-} catch (err) {
-  console.log(err);
 }
 
 var form = document.querySelector(".lead-form");
-try {
+if(form){
   form.addEventListener("submit", function (evt) {
     if (!leadName.value || !email.value || !text.value) {
       evt.preventDefault();
@@ -79,8 +85,6 @@ try {
       }
     }
   });
-} catch (err) {
-  console.log(err);
 }
 
 /* map checks */
@@ -89,20 +93,20 @@ var linkMap = document.querySelector(".contacts .map");
 var popupMap = document.querySelector(".modal-map");
 var closeMap = document.querySelector(".modal-map .modal-close");
 
-try {
+if(linkMap && popupMap){
   linkMap.addEventListener("click", function (evt) {
     evt.preventDefault();
     popupMap.classList.add("modal-active");
   });
+}
+if(closeMap){
   closeMap.addEventListener("click", function (evt) {
     evt.preventDefault();
     popupMap.classList.remove("modal-active");
   });
-}  catch (err) {
-  console.log(err);
 }
 
-try {
+if(popupMap){
   window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
       if (popupMap.classList.contains("modal-active")) {
@@ -111,8 +115,6 @@ try {
       }
     }
   });
-}  catch (err) {
-  console.log(err);
 }
 
 /* added product */
@@ -122,26 +124,62 @@ var popupBuy = document.querySelector(".product-added-popup");
 var closeBuy = document.querySelector(".product-added-popup .modal-close");
 var backToShop = document.querySelector(".product-added-popup .back-to-page");
 
+function addProductToHeaderCart() {
+  var headerCart = document.querySelector(".main-header-cart");
+  var spanProductsInCart = headerCart.querySelector(".main-header-products-in-cart");
 
-for (var i = 0; i < linksBuy.length; i++){
+  if(headerCart){
+    var productNumber = parseInt(spanProductsInCart.textContent, 10);
+    if(!headerCart.classList.contains("cart-active")){
+      headerCart.classList.add("cart-active");
+    }
+    spanProductsInCart.textContent = productNumber + 1;
+  }
+}
 
-  linksBuy[i].addEventListener("click", function (evt) {
+if(linksBuy && popupBuy){
+  for (var i = 0; i < linksBuy.length; i++){
+    linksBuy[i].addEventListener("click", function (evt) {
+      evt.preventDefault();
+      popupBuy.classList.add("modal-active");
+      addProductToHeaderCart();
+    });
+  }
+}
+
+
+
+var addBookmarkButtons = document.querySelectorAll(".bookmark");
+var spanHeaderBookmarks = document.querySelector(".main-header-added-bookmarks");
+var bookmarksNumber;
+
+if (addBookmarkButtons && spanHeaderBookmarks) {
+  bookmarksNumber = parseInt(spanHeaderBookmarks.textContent, 10);
+  for (var i=0; i < addBookmarkButtons.length; i++) {
+    addBookmarkButtons[i].addEventListener("click", function (evt) {
+        evt.preventDefault();
+        bookmarksNumber++;
+        spanHeaderBookmarks.textContent = bookmarksNumber;
+      }
+    )
+  }
+}
+
+
+if(closeBuy){
+  closeBuy.addEventListener("click", function (evt) {
     evt.preventDefault();
-    popupBuy.classList.add("modal-active");
+    popupBuy.classList.remove("modal-active");
   });
 }
-closeBuy.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  popupBuy.classList.remove("modal-active");
-});
-backToShop.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  popupBuy.classList.remove("modal-active");
-});
+if(backToShop){
+  backToShop.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    popupBuy.classList.remove("modal-active");
+  });
+}
 
-
-
-try {
+if(popupBuy){
   window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
       if (popupBuy.classList.contains("modal-active")) {
@@ -150,20 +188,62 @@ try {
       }
     }
   });
-} catch (err) {
-  console.log(err);
 }
 
+/* Banner */
 
+function showBanner(n){
+  var activeBanner = document.querySelector(".slider.active");
+  var targetBanner = document.querySelectorAll(".slider").item(n);
 
+  if(activeBanner && targetBanner){
+    activeBanner.classList.remove("active");
+    targetBanner.classList.add("active");
+  } else if (activeBanner && !targetBanner){
+    showBanner(n-1);
+  }
+}
 
+function showNextBanner(){
+  var allBanners = document.querySelectorAll(".slider");
+  var n;
 
+  if(allBanners) {
+    for (i = 0; i < allBanners.length; i++){
+      if(allBanners.item(i).classList.contains("active")){
+        n = i;
+      }
+    }
+    if(n === allBanners.length-1){
+      n = -1;
+    }
+    switchBanners(n, 1);
+  }
+}
 
+function showPreviousBanner(){
+  var allBanners = document.querySelectorAll(".slider");
+  var n;
 
-// for (var i=0; i<=linksBuy.length; i++){
-//   linksBuy[i].addEventListener("click", function (evt) {
-//     evt.preventDefault();
-//     popupBuy.classList.add("modal-active");
-//   });
-// }
-//
+  if(allBanners) {
+    for (i = 0; i < allBanners.length; i++){
+      if(allBanners.item(i).classList.contains("active")){
+        n = i;
+      }
+    }
+    if(n === 0){
+      n = allBanners.length;
+    }
+    switchBanners(n, -1);
+  }
+}
+
+function switchBanners(n, direction){
+  var radioButtons = document.querySelectorAll(".sliders input");
+
+  showBanner(n + direction);
+  for (var j = 0; j < radioButtons.length; j++) {
+    radioButtons.item(j).removeAttribute("checked");
+  }
+  radioButtons.item(n + direction).setAttribute("checked", "");
+}

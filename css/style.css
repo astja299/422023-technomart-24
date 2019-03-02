@@ -521,13 +521,7 @@ address {
 }
 
 
-
-
-
-
-
 .categories {
-
   margin-top: 59px;
 }
 
@@ -536,15 +530,9 @@ address {
   background-color: #ffffff;
   color: #ffffff;
   list-style: none;
-
   padding: 0;
-
 }
 
-.categories-list li {
- /* margin: 0;
-  padding: 0; */
-}
 
 .categories-option {
   width: 300px;
@@ -662,9 +650,6 @@ address {
   margin-top: 20px;
 }
 
-.categories-option .delivery {
-
-}
 
 .delivery::after {
   content: "";
@@ -675,6 +660,56 @@ address {
   top: 32px;
   right: 31px;
 }
+.slider-inner {
+  overflow: hidden;
+}
+
+.slider {
+  display: none;
+}
+
+.active {
+  display: block;
+
+}
+
+.sliders {
+  position: relative;
+
+}
+
+
+.slider-controls label {
+  display: inline-block;
+  margin: 0 3px;
+  width: 6px;
+  height: 6px;
+background-color: #ffffff;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+#btn-1:checked ~ .slider-controls label[for="btn-1"],
+#btn-2:checked ~ .slider-controls label[for="btn-2"] {
+  background-color: #ee3643;
+}
+
+.slider-controls {
+  /* margin-bottom: 10px; */
+  text-align: center;
+  position: absolute;
+  top: 237px;
+  left: 293px;
+  z-index: 1;
+}
+
+.sliders input[type="radio"] {
+  display: none;
+}
+
+
 
 .slider {
 position: relative;
@@ -719,13 +754,13 @@ position: relative;
   position: absolute;
   margin: 0;
   padding: 0;
-  top: 52px;
+  top: 72px;
   left: 127px;
   font-size: 0;
   background-color: transparent;
   border: 0;
   cursor: pointer;
-
+  z-index: 1;
 }
 
 .button-back::before {
@@ -755,14 +790,13 @@ position: relative;
   position: absolute;
   margin: 0;
   padding: 0;
-  top: 52px;
+  top: 72px;
   left: 127px;
-
-
-  font-size: 0;
+    font-size: 0;
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  z-index: 1;
 }
 
 .button-next::before {
@@ -966,7 +1000,6 @@ input[type="radio"].visually-hidden {
   color: #000000;
   background-color: #f4f7f9;
   padding-top: 67px;
-
   font-family: "PT Sans", Arial, sans-serif;
 
 }
@@ -1052,18 +1085,39 @@ input[type="radio"].visually-hidden {
 }
 
 .services-text p {
-  width: 275px;
+  width: 380px;
   margin: 0;
 }
 
 .services-slider {
-  display: flex;
+  display: none; /* changed from flex to none */
   margin-top: 69px;
+
+  z-index: 100000;
+  padding-bottom: 102px;
+}
+
+.service-delivery {
   background-image: url(../img/delivery.png);
   background-repeat: no-repeat;
   background-position: 470px 25px;
-  z-index: 100000;
-  padding-bottom: 102px;
+}
+
+.service-warranty {
+  background-image: url(../img/guarantee.png);
+  background-repeat: no-repeat;
+  background-position: 540px 5px;
+}
+
+.service-credit {
+  background-image: url(../img/credit.png);
+  background-repeat: no-repeat;
+  background-position: 470px 5px;
+}
+
+
+.services-slider-active { /* added the selector */
+  display: flex;
 }
 
 .service-switcher:hover,
@@ -1076,7 +1130,10 @@ background-color: #293449;
 }
 
 
-
+.services-text .button {
+  margin-top: 30px;
+  padding: 10px 45px;
+}
 
 
 
@@ -2239,10 +2296,7 @@ display: none;
   left: 81px;
 }
 
-.none {
-  display: none;
 
-}
 
 @keyframes bounce {
   0% { transform: translateY(-2000px); }
