@@ -6,6 +6,7 @@
   <link href="css/normalize.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700%7CPT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
   <link href="css/min.css" rel="stylesheet">
+  <meta name="format-detection" content="telephone=no">
 </head>
 <body>
 <header class="main-header">
@@ -13,9 +14,7 @@
     <div class="container">
       <div class="main-header-top">
         <a class="main-header-logo" href="index.html">
-
-            <img src="img/logo.svg" width="110" height="18" alt="Логотип компании «Техномарт»">
-
+          <img src="img/logo.svg" width="110" height="18" alt="Логотип компании «Техномарт»">
         </a>
         <form class="main-header-search-form">
           <p class="main-header-search">
@@ -31,10 +30,10 @@
         <a class="main-header-bookmarks" href="#">Закладки:
           <span class="main-header-added-bookmarks">0</span>
         </a>
-          <a class="main-header-cart cart-active" href="#">Корзина: 
-            <span class="main-header-products-in-cart">10</span><!-- span.main-header-products-in-cart added-->
-          </a>
-          <a class="main-header-order" href="#">Оформить заказ</a>
+        <a class="main-header-cart cart-active" href="#">Корзина:
+          <span class="main-header-products-in-cart">10</span><!-- span.main-header-products-in-cart added-->
+        </a>
+        <a class="main-header-order" href="#">Оформить заказ</a>
 
       </div>
     </div>
@@ -46,7 +45,7 @@
         <br>и инструментов для ремонта</p>
 
       <address class="main-header-location">
-        <p  x-ms-format-detection="none" class="phone-number">+7 (812) 555-05-55</p>
+        <p class="phone-number">+7 (812) 555-05-55</p>
         <p class="our-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </address>
 
@@ -112,7 +111,6 @@
         <form class="filter" method="get" action="https://echo.htmlacademy.ru">
           <fieldset>
             <legend>Цена:</legend>
-
             <div class="filter-range">
               <div class="range-component">
                 <div class="range-controls">
@@ -131,7 +129,6 @@
           </fieldset>
 
           <div class="filter-line"></div>
-
           <fieldset>
             <legend>Производители:</legend>
             <ul class="filters-brand">
@@ -354,7 +351,6 @@
           </li>
         </ul>
 
-
         <ul class="pagination-list">
           <li class="pagination-item pagination-item-current">1</li>
           <li class="pagination-item"><a href="#">2</a></li>
@@ -387,10 +383,9 @@
             <img src="img/logo.svg" width="138" height="23" alt="Логотип компании «Техномарт»">
           </a>
         </div>
-
-          <address  x-ms-format-detection="none" class="main-footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
-            +7 (812) 555-05-55</address>
-       </div>
+        <address class="main-footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
+          +7 (812) 555-05-55</address>
+      </div>
 
       <div class="main-footer-menu-wrapper">
         <ul class="main-footer-menu-links">
@@ -454,19 +449,16 @@
       </p>
     </div>
   </section>
-
 </footer>
 
 <section class="modal product-added-popup">
   <p>Товар добавлен в корзину!</p>
-  <!-- Здесь будет иконка -->
   <div class="popup-footer">
     <a class="button open-card" href="#">Оформить заказ</a>
     <a class="back-to-page button" href="#">Продолжить покупки</a>
   </div>
   <button type="button" class="modal-close">Закрыть</button>
 </section>
-
 <script src="js/compressed.js"></script>
 </body>
 </html>
