@@ -1,16 +1,63 @@
 /* Services slider */
 
-function showSlide(n){
-  var activeSlide = document.querySelector(".services-slider-active");
-  var targetSlide = document.querySelectorAll(".services-slider").item(n);
+// function showSlide(n){
+//   var activeSlide = document.querySelector(".services-slider-active");
+//   var targetSlide = document.querySelectorAll(".services-slider").item(n);
+//
+//   if(activeSlide && targetSlide){
+//     activeSlide.classList.remove("services-slider-active");
+//     targetSlide.classList.add("services-slider-active");
+//   } else if (activeSlide && !targetSlide){
+//     showSlide(n-1);
+//   }
+// }
 
-  if(activeSlide && targetSlide){
-    activeSlide.classList.remove("services-slider-active");
-    targetSlide.classList.add("services-slider-active");
-  } else if (activeSlide && !targetSlide){
-    showSlide(n-1);
+
+var block = document.querySelector(".services-slider-active");
+
+var deliveryTab = document.querySelectorAll(".delivery-slide");
+var warrantyTab = document.querySelectorAll(".warranty-slide");
+var creditTab = document.querySelectorAll(".credit-slide");
+
+var creditSlide = document.querySelector(".service-credit");
+var deliverySlide = document.querySelector(".service-delivery");
+var warrantySlide = document.querySelector(".service-warranty");
+
+if(block) {
+  for (var k = 0; k < creditTab.length; k++) {
+    creditTab[k].addEventListener("click", function (evt) {
+      evt.preventDefault();
+      block.classList.remove("services-slider-active");
+      creditSlide.classList.add("services-slider-active");
+      block = creditSlide;
+    });
+  }
+
+  for (k = 0; k < deliveryTab.length; k++) {
+    deliveryTab[k].addEventListener("click", function (evt) {
+      evt.preventDefault();
+      block.classList.remove("services-slider-active");
+      deliverySlide.classList.add("services-slider-active");
+      block = deliverySlide;
+    });
+  }
+
+  for (k = 0; k < warrantyTab.length; k++) {
+    warrantyTab[k].addEventListener("click", function (evt) {
+      evt.preventDefault();
+      block.classList.remove("services-slider-active");
+      warrantySlide.classList.add("services-slider-active");
+      block = warrantySlide;
+    });
   }
 }
+
+
+
+
+
+
+
 
 /* Write us checks */
 
@@ -192,58 +239,117 @@ if(popupBuy){
 
 /* Banner */
 
-function showBanner(n){
-  var activeBanner = document.querySelector(".slider.active");
-  var targetBanner = document.querySelectorAll(".slider").item(n);
+// var radioButtons = document.querySelectorAll(".sliders input");
+//
+// if(radioButtons){
+//   for(var t = 0; t < radioButtons.length; t++){
+//     console.log("dlina blet" + radioButtons.length);
+//     console.log(radioButtons[t]);
+//     radioButtons[t].addEventListener("click", function (evt) {
+//       showBanner(t);
+//       console.log("Radio click: " + t);
+//     })
+//   }
+// }
+//
+// function showBanner(n){
+//   var activeBanner = document.querySelector(".slider.active");
+//   var targetBanner = document.querySelectorAll(".slider").item(n);
+//
+//   console.log("Function received: " + n);
+//   if(activeBanner && targetBanner){
+//     activeBanner.classList.remove("active");
+//     targetBanner.classList.add("active");
+//     console.log("1");
+//   // } else //if (activeBanner && !targetBanner)
+//   // {
+//   //   showBanner(n-1);
+//   //   console.log("2");
+//   }
+// }
+//
+// function showNextBanner(){
+//   var allBanners = document.querySelectorAll(".slider");
+//   var n;
+//
+//   if(allBanners) {
+//     for (i = 0; i < allBanners.length; i++){
+//       if(allBanners.item(i).classList.contains("active")){
+//         n = i;
+//       }
+//     }
+//     if(n === allBanners.length-1){
+//       n = -1;
+//     }
+//     switchBanners(n, 1);
+//   }
+// }
+//
+// function showPreviousBanner(){
+//   var allBanners = document.querySelectorAll(".slider");
+//   var n;
+//
+//   if(allBanners) {
+//     for (i = 0; i < allBanners.length; i++){
+//       if(allBanners.item(i).classList.contains("active")){
+//         n = i;
+//       }
+//     }
+//     if(n === 0){
+//       n = allBanners.length;
+//     }
+//     switchBanners(n, -1);
+//   }
+// }
+//
+// function switchBanners(n, direction){
+//   var radioButtons = document.querySelectorAll(".sliders input");
+//
+//   showBanner(n + direction);
+//   for (var j = 0; j < radioButtons.length; j++) {
+//     radioButtons.item(j).removeAttribute("checked");
+//   }
+//   radioButtons.item(n + direction).setAttribute("checked", "");
+// }
 
-  if(activeBanner && targetBanner){
-    activeBanner.classList.remove("active");
-    targetBanner.classList.add("active");
-  } else if (activeBanner && !targetBanner){
-    showBanner(n-1);
+var radioButtons = document.querySelectorAll(".sliders input");
+var currentSlide = 0;
+var previousSlideButton = document.querySelector(".prev");
+var nextSlideButton = document.querySelector(".next");
+
+function check() {
+  for(var i =0; i < radioButtons.length; i++){
+    if(radioButtons[i].checked) currentSlide = i;
   }
+
 }
 
-function showNextBanner(){
-  var allBanners = document.querySelectorAll(".slider");
-  var n;
+previousSlideButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  check();
+  if(++currentSlide >= radioButtons.length) currentSlide = 0;
+  radioButtons[currentSlide].checked = true;
 
-  if(allBanners) {
-    for (i = 0; i < allBanners.length; i++){
-      if(allBanners.item(i).classList.contains("active")){
-        n = i;
-      }
+
+});
+
+nextSlideButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  check();
+  if(--currentSlide < 0) currentSlide = radioButtons.length - 1;
+  radioButtons[currentSlide].checked = true;
+});
+
+var n;
+
+for (i=0; i<radioButtons.length; i++){
+  n = i;
+  radioButtons[i].addEventListener("change", function (event) {
+    var sliders = document.querySelectorAll(".slider");
+    for (var j=0; j<sliders.length; j++){
+      sliders[j].classList.remove("active");
     }
-    if(n === allBanners.length-1){
-      n = -1;
-    }
-    switchBanners(n, 1);
-  }
-}
-
-function showPreviousBanner(){
-  var allBanners = document.querySelectorAll(".slider");
-  var n;
-
-  if(allBanners) {
-    for (i = 0; i < allBanners.length; i++){
-      if(allBanners.item(i).classList.contains("active")){
-        n = i;
-      }
-    }
-    if(n === 0){
-      n = allBanners.length;
-    }
-    switchBanners(n, -1);
-  }
-}
-
-function switchBanners(n, direction){
-  var radioButtons = document.querySelectorAll(".sliders input");
-
-  showBanner(n + direction);
-  for (var j = 0; j < radioButtons.length; j++) {
-    radioButtons.item(j).removeAttribute("checked");
-  }
-  radioButtons.item(n + direction).setAttribute("checked", "");
+    console.log(n);
+    sliders[1].classList.add("active");
+  })
 }

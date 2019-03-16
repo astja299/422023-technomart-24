@@ -5,7 +5,7 @@
   <title>HTML Academy: Техномарт</title>
   <link href="css/normalize.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700%7CPT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
-  <link href="css/min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <meta name="format-detection" content="telephone=no">
 </head>
 <body>
@@ -31,7 +31,7 @@
           <span class="main-header-added-bookmarks">0</span>
         </a>
         <a class="main-header-cart" href="#">Корзина:
-          <span class="main-header-products-in-cart">0</span><!-- span.main-header-products-in-cart added-->
+          <span class="main-header-products-in-cart">0</span>
         </a>
         <a class="main-header-order" href="#">Оформить заказ</a>
       </div>
@@ -68,13 +68,13 @@
 
     <nav class="main-menu">
       <ul class="main-menu-links">
-        <li><a>Главная</a></li>
+        <li><a class="first-child">Главная</a></li>
         <li><a href="#">Компания</a></li>
         <li><a href="catalog.html">Каталог</a></li>
         <li><a href="#">Новости</a></li>
         <li><a href="#">Спецпредложения</a></li>
         <li><a href="#">Доставка</a></li>
-        <li><a href="#">Контакты</a></li>
+        <li><a class="last-child" href="#">Контакты</a></li>
       </ul>
     </nav>
   </div>
@@ -104,26 +104,28 @@
       </div>
 
       <div class="sliders">
-        <input type="radio" id="btn-1" name="toggle" checked >
-        <input type="radio" id="btn-2" name="toggle" >
+        <input type="radio" id="btn-1" name="toggle" checked>
+        <input type="radio" id="btn-2" name="toggle">
         <div class="slider-controls">
-          <label onclick="showBanner(0)" for="btn-1"></label>
-          <label onclick="showBanner(1)" for="btn-2"></label>
+          <label for="btn-1"></label>
+          <label for="btn-2"></label>
         </div>
-        <button class="button-back" onclick="showPreviousBanner()"></button>
-        <button class="button-next" onclick="showNextBanner()"></button>
+
+        <button class="promo-slider-btn prev"></button>
+        <button class="promo-slider-btn next"></button>
+
 
         <div class="slider active">
           <h3>Дрели</h3>
           <p>Соседям на радость!</p>
-          <a class="button" href="#" aria-label="">ОТКРЫТЬ КАТАЛОГ</a>
+          <a class="button" href="/catalog.html" aria-label="каталог">ОТКРЫТЬ КАТАЛОГ</a>
           <img src="img/slider-1.jpg" width="620" height="266" alt="">
         </div>
 
-        <div class="slider ">
+        <div class="slider">
           <h3>Перфораторы</h3>
           <p>Настоящие мужские игрушки</p>
-          <a class="button" href="#" aria-label="">ОТКРЫТЬ КАТАЛОГ</a>
+          <a class="button" href="/catalog.html" aria-label="каталог">ОТКРЫТЬ КАТАЛОГ</a>
           <img src="img/slider-2.jpg" width="620" height="266" alt="">
         </div>
       </div>
@@ -191,8 +193,7 @@
         </p>
       </li>
 
-      <li class="catalog-item main">
-        <div class="flag flag-new">новинка</div>
+      <li class="catalog-item main tag-new">
         <div class="actions">
           <a href="#" class="buy">Купить</a>
           <a href="#" class="bookmark">В закладки</a>
@@ -249,43 +250,42 @@
     <div class="container">
       <h2>Сервисы</h2>
       <p>
-        Хороший интернет-магазин отличается от плохого не только ценами!<br>
-        Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
+        Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
       </p>
 
-      <div class="services-slider services-slider-active service-delivery"> <!--.services-slider-active added-->
+      <div class="services-slider services-slider-active  service-delivery">
         <ul class="services-list">
           <li>
-            <button class="service-switcher service-active">Доставка</button>
+            <button class="delivery-slide service-switcher service-active">Доставка</button>
           </li>
           <li>
-            <button class="service-switcher" onclick="showSlide(1)">Гарантия</button>
+            <button class="warranty-slide service-switcher" >Гарантия</button>
           </li>
           <li>
-            <button class="service-switcher" onclick="showSlide(2)">Кредит</button>
+            <button class="credit-slide service-switcher">Кредит</button>
           </li>
         </ul>
         <div class="services-text">
           <h3>Доставка</h3>
           <p>
             Мы с удовольствием доставим ваш товар прямо<br>
-            к вашему подъезду совершенно бесплатно!<br>
-            Ведь мы неплохо заработаем,<br>
-            поднимая его на ваш этаж!
+            к вашему подъезду совершенно бесплатно!
+            <p>Ведь мы неплохо заработаем,<br>
+          поднимая его на ваш этаж!</p>
           </p>
         </div>
       </div>
 
-      <div class="services-slider service-warranty"><!-- .none removed-->
+      <div class="services-slider service-warranty">
         <ul class="services-list">
           <li>
-            <button class="service-switcher" onclick="showSlide(0)">Доставка</button>
+            <button class="delivery-slide service-switcher" >Доставка</button>
           </li>
           <li>
-            <button class="service-switcher service-active">Гарантия</button>
+            <button class="warranty-slide service-switcher service-active">Гарантия</button>
           </li>
           <li>
-            <button class="service-switcher" onclick="showSlide(2)">Кредит</button>
+            <button class="credit-slide service-switcher">Кредит</button>
           </li>
         </ul>
         <div class="services-text">
@@ -300,16 +300,16 @@
         </div>
       </div>
 
-      <div class="services-slider service-credit"><!-- .none removed-->
+      <div class="services-slider service-credit">
         <ul class="services-list">
           <li>
-            <button class="service-switcher" onclick="showSlide(0)">Доставка</button>
+            <button class="delivery-slide service-switcher" >Доставка</button>
           </li>
           <li>
-            <button class="service-switcher" onclick="showSlide(1)">Гарантия</button>
+            <button class="warranty-slide service-switcher" >Гарантия</button>
           </li>
           <li>
-            <button class="service-switcher service-active">Кредит</button>
+            <button class="credit-slide service-switcher service-active">Кредит</button>
 
           </li>
         </ul>
@@ -335,7 +335,7 @@
           не оставит равнодушными любителей сэкономить на гастарбайтерах.
         </p>
         <p>
-          Мы можем доставить ваш товар в самые отдаленные точки России!<br>
+          Мы можем доставить ваш товар в самые отдаленные точки России!
           Техномарт работает со многими транспортными компаниями:
         </p>
       </div>
@@ -350,11 +350,11 @@
     <section class="contacts">
       <h2>Контакты</h2>
       <p>
-        Вы можете забрать товар сами, <br>заехав в наш офис:
+        Вы можете забрать товар сами, заехав в наш офис:
       </p>
-      <a class="map" href="#">
+      <a class="map" href="https://www.google.com/maps/place/Bolshaya+Konyushennaya+Street,+19,+Sankt-Peterburg,+191186/@59.938794,30.323083,15z/data=!4m5!3m4!1s0x4696310fca5ba729:0xea9c53d4493c879f!8m2!3d59.9387942!4d30.3230833?hl=ru-RU">
         <img src="img/map.png" width="300" height="158" alt="Наш адрес: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8" >
-      </a> <br>
+      </a>
       <a class="button" href="#">ЗАБЛУДИЛИСЬ? НАПИШИТЕ НАМ!</a>
     </section>
   </div>
@@ -369,8 +369,9 @@
             <img src="img/logo.svg" width="138" height="23" alt="Логотип компании «Техномарт»">
           </a>
         </div>
-        <address class="main-footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
-          +7 (812) 555-05-55</address>
+        <address class="main-footer-address">
+          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55
+        </address>
       </div>
 
       <div class="main-footer-menu-wrapper">
@@ -395,7 +396,7 @@
   <section class="main-footer-bottom">
     <div class="container">
       <p class="main-footer-bottom-copyright">
-        &copy; 2010-2017 Компания "Техномарт"
+        &copy; 2010-2019 Компания "Техномарт"
         Все права защищены
       </p>
 
@@ -427,13 +428,8 @@
         </ul>
       </div>
 
-      <p class="main-footer-bottom-contact-us">
-        Обратная связь:<br>
-        <a href="mail@htmlacademy.ru">mail@htmlacademy.ru </a>
-      </p>
-      <p class="main-footer-bottom-developer">
-        Разработано -<br><a href="htmlacademy.ru">htmlacademy.ru</a>
-      </p>
+      <p class="main-footer-bottom-contact-us">Обратная связь: <a href="mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
+      <p class="main-footer-bottom-developer">Разработано -<a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
     </div>
   </section>
 </footer>
@@ -479,7 +475,7 @@
   </div>
   <button type="button" class="modal-close">Закрыть</button>
 </section>
-<script src="js/compressed.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
