@@ -867,11 +867,10 @@ img {
   font-weight: normal;
   text-transform: uppercase;
   color: #000000;
-  margin: 0;
-  margin-bottom: 13px;
+  margin: 0 0 11px;
   background-color: #f7f3ec;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
   padding-left: 18px;
 }
 .sorting {
@@ -984,6 +983,7 @@ img {
 }
 .price-controls input {
   width: 95px;
+  padding-left: 1px;
   margin: 0;
   text-align: center;
   background: none;
@@ -999,7 +999,7 @@ img {
   width: 220px;
   height: 80px;
   background-color: #f7f3ec;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 }
 .range-controls .scale {
   height: 2px;
@@ -1034,13 +1034,14 @@ img {
   color: #000000;
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 13px;
+  margin-bottom: 14px;
 }
 .filter fieldset {
   border: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 29px;
+  margin-bottom: 25px;
+  margin-top: 15px;
 }
 .filter-last-child {}
 .filter ul {
@@ -1058,7 +1059,7 @@ img {
   color: #000000;
   text-transform: uppercase;
   border: 2px solid #e5e5e5;
-  margin-top: 49px;
+  margin-top: 52px;
   line-height: 18px;
   height: 38px;
   font-size: 13px;
@@ -1069,11 +1070,11 @@ img {
 }
 .filter-line {
   border-top: 1px solid #cccccc;
-  margin: 25px 0 13px;
+  margin: 26px 0 8px;
 }
 .filter-option {
   margin-bottom: 20px;
-  padding-left: 35px;
+  padding-left: 34px;
 }
 .filter-option:last-child {
   margin-bottom: 0;
