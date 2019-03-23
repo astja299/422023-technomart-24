@@ -15,7 +15,7 @@
       <div class="main-header-top">
         <a class="main-header-logo"><img alt="Логотип компании «Техномарт»" height="18" src="img/logo.svg" width="110"></a>
         <form class="main-header-search-form">
-          <p class="main-header-search"><input id="search" name="q" placeholder="Поиск:" type="search"> <label class="search-icon" for="search"><svg height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
+          <p class="main-header-search"><input id="search" name="q" placeholder="Поиск:" class="search-input" type="search"> <label class="search-icon" for="search"><svg height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
             <path d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z" fill="#ffffff"></path></svg></label></p>
         </form><a class="main-header-bookmarks" href="#">Закладки: <span class="main-header-added-bookmarks">0</span></a> <a class="main-header-cart" href="#">Корзина: <span class="main-header-products-in-cart">0</span></a> <a class="main-header-order" href="#">Оформить заказ</a>
       </div>
@@ -25,7 +25,7 @@
     <div class="main-header-info">
       <p class="main-header-title">Интернет-магазин строительных материалов&nbsp;&nbsp; и инструментов для ремонта</p>
       <address class="main-header-location">
-        <p class="phone-number">+7 (812) 555-05-55</p>
+        <a href="tel:+7 (812) 555-05-55" class="phone-number">+7 (812) 555-05-55</a>
         <p class="our-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </address>
       <ul class="main-header-user-anonymous">
@@ -71,6 +71,7 @@
   <section class="categories container">
     <h2 class="visually-hidden">Ассортимент</h2>
     <div class="categories-list">
+    <div class="categories-row">
       <div class="categories-option materials">
         <h3>Материалы</h3><a aria-label="" class="" href="#">на любой вкус</a>
         <div class="flag tag-new">
@@ -83,8 +84,10 @@
       <div class="categories-option technique">
         <h3>Техника</h3><a aria-label="" class="" href="#">для стройки</a>
       </div>
+    </div>
+      <div class="categories-slider">
       <div class="sliders">
-        <input checked id="btn-1" name="toggle" type="radio"> <input id="btn-2" name="toggle" type="radio">
+        <input checked id="btn-1"  name="toggle" type="radio"> <input id="btn-2" name="toggle" type="radio">
         <div class="slider-controls">
           <label for="btn-1"></label> <label for="btn-2"></label>
         </div><button class="promo-slider-btn prev"></button> <button class="promo-slider-btn next"></button>
@@ -95,12 +98,15 @@
           <h3>Перфораторы</h3>
           <p>Настоящие мужские игрушки</p><a aria-label="каталог" class="button" href="catalog.html">ОТКРЫТЬ КАТАЛОГ</a> <img alt="" height="266" src="img/slider-2.jpg" width="620"></div>
       </div>
+   <div class="categories-column">
       <div class="categories-option discounts">
         <h3>Скидки 50%</h3><a aria-label="" class="" href="#">На 350 ТОВАРОВ</a>
       </div>
       <div class="categories-option delivery">
         <h3>Доставка</h3><a aria-label="" class="" href="#">бесплатно</a>
       </div>
+    </div>
+    </div>
     </div>
   </section>
   <div class="popular-products container">
@@ -170,7 +176,6 @@
             к вашему подъезду совершенно бесплатно!</p>
           <p>Ведь мы неплохо заработаем,<br>
             поднимая его на ваш этаж!</p>
-          <p></p>
         </div>
       </div>
       <div class="services-slider service-warranty">
